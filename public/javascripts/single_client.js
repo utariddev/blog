@@ -175,7 +175,7 @@ function locateArticle(serverData) {
                         </a>
                     </div>
                   </header>
-                  <span class="image featured"><img src="../images/` + serverData.article_image + `" alt="" /></span>
+                  <span class="image featured">` + serverData.article_image + `</span>
                   ` + serverData.article_text + `
                   <br/><br/>
                   <footer>

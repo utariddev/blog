@@ -347,7 +347,7 @@ function locateArticles(serverData, currPageNumber) {
   						<a href="#" class="author"><span class="name">` + data.author_name + `</span><img src="images/avatar.jpg" alt="" /></a>
   					</div>
   				</header>
-  				<a href="single/` + data.id + `" class="image featured"><img src="images/` + data.article_image + `" alt="" /></a>
+  				<a href="single/` + data.id + `" class="image featured">` + data.article_image + `</a>
   				<p>` + data.article_summary + `</p>
   				<footer>
   					<ul class="actions">
@@ -428,7 +428,7 @@ function locateMostReadArticles(serverData) {
           <time class="published" datetime="` + data.article_date + `">` + getFormattedDateTime(data.article_date, false) + `</time>
           <a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
         </header>
-        <a href="single/` + data.id + `" class="image"><img src="images/` + data.article_image + `" alt="" /></a>
+        <a href="single/` + data.id + `" class="image">` + data.article_image + `</a>
       </article>`);
   }
 }

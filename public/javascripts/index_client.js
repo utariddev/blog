@@ -347,8 +347,9 @@ function locateArticles(serverData, currPageNumber) {
   						<a href="#" class="author"><span class="name">` + data.author_name + `</span><img src="images/avatar.jpg" alt="" /></a>
   					</div>
   				</header>
-  				<a href="single/` + data.id + `" class="image featured">` + data.article_image + `</a>
-  				<p>` + data.article_summary + `</p>
+  				<!--<a href="single/` + data.id + `" class="image featured">` + data.article_image + `</a>-->
+          <a href="single/` + data.id + `" class="image featured"><img src="` + data.article_image + `" alt="mysql" border="0"></a>
+          <p>` + data.article_summary + `</p>
   				<footer>
   					<ul class="actions">
   						<li><a href="single/` + data.id + `" class="button large">devam</a></li>
@@ -428,7 +429,9 @@ function locateMostReadArticles(serverData) {
           <time class="published" datetime="` + data.article_date + `">` + getFormattedDateTime(data.article_date, false) + `</time>
           <a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
         </header>
-        <a href="single/` + data.id + `" class="image">` + data.article_image + `</a>
+        <!--<a href="single/` + data.id + `" class="image">` + data.article_image + `</a>-->
+        <a href="single/` + data.id + `" class="image"><img src="` + data.article_image + `" alt="mysql" border="0"></a>
+
       </article>`);
   }
 }

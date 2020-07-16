@@ -3,12 +3,14 @@ class UI {
   wait = null;
   loader_main = null;
   wait_loader_text = null;
+  wait_loader_time = null;
   constructor() {
     consoleLog("ui constructor")
     this.category_main = $("#main");
     this.wait = $("#wait");
     this.loader_main = $("#wait_loader");
     this.wait_loader_text = $("#wait_loader_text");
+    this.wait_loader_time = $("#wait_loader_time");
   }
 }
 
@@ -23,11 +25,13 @@ class LoadingScreen {
 
 var ui_elements = null;
 var loading_screen = null;
+var timer = new easytimer.Timer();
 
 /*
   yukleniyor ekranini gosterir
 */
 function showLoadingScreen() {
+  showTimer();
   ui_elements.wait_loader_text.text("yükleniyor");
   ui_elements.wait.removeClass("display_none");
   ui_elements.loader_main.addClass("custom_loader");
@@ -39,6 +43,7 @@ function showLoadingScreen() {
 function hideLoadingAndShowError() {
   ui_elements.loader_main.removeClass("custom_loader");
   ui_elements.wait_loader_text.text("burada okunacak bir şey yok");
+  timer.stop();
 }
 
 /*
@@ -54,6 +59,7 @@ function hideLoadingScreen() {
       ui_elements.wait_loader_text.text("bir şey bozuk. bi ara tekrar dene");
     }
   }
+  timer.stop();
 }
 
 $(document).ready(function() {
@@ -102,6 +108,18 @@ function getCategoryNameFromURL() {
   consoleLog("category_name : " + category_name)
 
   return category_name;
+}
+
+/*
+  sayaci gosterir
+*/
+function showTimer() {
+  timer.start({
+    precision: 'secondTenths'
+  });
+  timer.addEventListener('secondTenthsUpdated', function(e) {
+    ui_elements.wait_loader_time.html(timer.getTimeValues().toString(['minutes', 'seconds', 'secondTenths']));
+  });
 }
 
 /*

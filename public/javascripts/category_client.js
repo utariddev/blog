@@ -176,7 +176,10 @@ function locateCategoryArticles(serverData) {
   					</div>
   					<div class="meta">
   						<time class="published" datetime="` + data.article_date + `">` + getFormattedDateTime(data.article_date) + `</time>
-  						<a href="#" class="author"><span class="name">` + data.author_name + `</span><img src="/images/avatar.jpg" alt=""></a>
+  						<a href="#" class="author">
+                <span class="name">` + data.author_name + `</span>
+                <img src="https://i.ibb.co/5K7Myvm/avatar.jpg" alt="avatar" border="0">
+              </a>
   					</div>
   				</header>
   			</article>

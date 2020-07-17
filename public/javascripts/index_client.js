@@ -344,7 +344,7 @@ function locateArticles(serverData, currPageNumber) {
   					</div>
   					<div class="meta">
   						<time class="published" datetime="` + data.article_date + `">` + getFormattedDateTime(data.article_date, false) + `</time>
-  						<a href="#" class="author"><span class="name">` + data.author_name + `</span><img src="images/avatar.jpg" alt="" /></a>
+  						<a href="#" class="author"><span class="name">` + data.author_name + `</span><img src="https://i.ibb.co/5K7Myvm/avatar.jpg" alt="avatar" border="0"></a>
   					</div>
   				</header>
   				<!--<a href="single/` + data.id + `" class="image featured">` + data.article_image + `</a>-->
@@ -427,7 +427,7 @@ function locateMostReadArticles(serverData) {
         <header>
           <h3><a href="single/` + data.id + `">` + data.article_title + `</a></h3>
           <time class="published" datetime="` + data.article_date + `">` + getFormattedDateTime(data.article_date, false) + `</time>
-          <a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+          <a href="#" class="author"><img src="https://i.ibb.co/5K7Myvm/avatar.jpg" alt="avatar" border="0"></a>
         </header>
         <!--<a href="single/` + data.id + `" class="image">` + data.article_image + `</a>-->
         <a href="single/` + data.id + `" class="image"><img src="` + data.article_image + `" alt="mysql" border="0"></a>

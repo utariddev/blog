@@ -171,7 +171,7 @@ function locateArticle(serverData) {
                       <time class="published" datetime="` + serverData.article_date + `">` + getFormattedDateTime(serverData.article_date) + `</time>
                         <a href="#" class="author">
                           <span class="name">` + serverData.author_name + `</span>
-                          <img src="../images/avatar.jpg" alt="" />
+                          <img src="https://i.ibb.co/5K7Myvm/avatar.jpg" alt="avatar" border="0">
                         </a>
                     </div>
                   </header>

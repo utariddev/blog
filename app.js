@@ -7,6 +7,7 @@ var compression = require('compression')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var policyRouter = require('./routes/policy');
 // var singleRouter = require('./routes/single');
 
 var app = express();
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/policy', policyRouter);
 // app.use('/single', singleRouter);
 
 /*

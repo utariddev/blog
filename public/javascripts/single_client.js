@@ -161,6 +161,7 @@ function getArticle(article_id) {
   makale datasini html e yerlestirir
 */
 function locateArticle(serverData) {
+  document.title = serverData.article_title;
   ui_elements.article_main.append(`<article class="post">
                   <header>
                     <div class="title">

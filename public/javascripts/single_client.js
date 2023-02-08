@@ -206,7 +206,7 @@ function locateArticle(serverData) {
                     */
                     (function() { // DON'T EDIT BELOW THIS LINE
                     var d = document, s = d.createElement('script');
-                    s.src = 'https://utarid-org.disqus.com/embed.js';
+                    s.src = 'https://utarid-org-1.disqus.com/embed.js';
                     s.setAttribute('data-timestamp', +new Date());
                     (d.head || d.body).appendChild(s);
                     })();

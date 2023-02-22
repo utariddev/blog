@@ -8,7 +8,6 @@ var compression = require('compression')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var policyRouter = require('./routes/policy');
-var certRouter = require('./routes/cert');
 // var singleRouter = require('./routes/single');
 
 var app = express();
@@ -29,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/policy', policyRouter);
-app.use('/.well-known/acme-challenge/_SHd0IJ1stVvuG50c5MyCdUHBcegzJk59-9RJXu66OY', certRouter);
 // app.use('/single', singleRouter);
 
 /*

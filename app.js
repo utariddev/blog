@@ -10,6 +10,14 @@ var usersRouter = require('./routes/users');
 var policyRouter = require('./routes/policy');
 // var singleRouter = require('./routes/single');
 
+function redirectWwwTraffic(req, res, next) {
+  if (req.headers.host.slice(0, 4) === "www.") {
+    var newHost = req.headers.host.slice(4);
+    return res.redirect(301, req.protocol + "://" + newHost + req.originalUrl);
+  }
+  next();
+}
+
 var app = express();
 app.use(compression())
 
@@ -29,6 +37,8 @@ app.enable('trust proxy')
 app.use((req, res, next) => {
     req.secure ? next() : res.redirect('https://' + req.headers.host + req.url)
 })
+
+app.use(redirectWwwTraffic);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

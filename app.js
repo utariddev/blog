@@ -3,11 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var compression = require('compression')
+var compression = require('compression');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var policyRouter = require('./routes/policy');
+var sitemapRouter = require('./routes/sitemap');
 // var singleRouter = require('./routes/single');
 
 function redirectWwwTraffic(req, res, next) {
@@ -43,6 +44,7 @@ app.use(redirectWwwTraffic);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/policy', policyRouter);
+app.use('/sitemap.xml', sitemapRouter);
 // app.use('/single', singleRouter);
 
 /*

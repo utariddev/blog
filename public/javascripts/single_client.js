@@ -45,7 +45,7 @@ function documentReady() {
   createClass();
   showLoadingScreen();
   //article_id int olmali ve bos olmamali
-  if (article_id != null && article_id != "" && !isNaN(article_id)) {
+  if (article_id != null && article_id != "" /*&& !isNaN(article_id)*/) {
     getArticle(article_id);
   } else {
     hideLoadingAndShowError();

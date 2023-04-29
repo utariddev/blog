@@ -339,7 +339,7 @@ function locateArticles(serverData, currPageNumber) {
     ui_elements.articles_main.append(`<article class="post">
   				<header>
   					<div class="title">
-  						<h2><a href="/single/` + data.id + `">` + data.article_title + `</a></h2>
+  						<h2><a href="/single/` + data.article_web_title + `">` + data.article_title + `</a></h2>
   						<!--<p>` + data.article_summary + `</p>-->
   					</div>
   					<div class="meta">
@@ -348,7 +348,7 @@ function locateArticles(serverData, currPageNumber) {
   					</div>
   				</header>
   				<!--<a href="single/` + data.id + `" class="image featured">` + data.article_image + `</a>-->
-          <a href="single/` + data.id + `" class="image featured"><img src="` + data.article_image + `" alt="mysql" border="0"></a>
+          <a href="single/` + data.article_web_title + `" class="image featured"><img src="` + data.article_image + `" alt="mysql" border="0"></a>
           <p>` + data.article_summary + `</p>
   				<footer>
   					<ul class="actions">

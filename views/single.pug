@@ -13,6 +13,13 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/stylesheets/main.css" />
+		script.
+			let url = window.location.href;
+			let url_array = url.split("/");
+			let article_title = url_array[url_array.length - 1];
+			article_title = article_title.replace(/-/g, " ");
+			document.title = article_title;
+		
 		//-<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-1YB1Z3N9M7"></script>
 		script.

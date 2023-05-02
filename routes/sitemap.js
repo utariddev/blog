@@ -17,6 +17,14 @@ router.get('/', function(req, res, next) {
                 <loc>https://utarid.org/single/linux-te-local-postgresql-kurulumu</loc>
                 <lastmod>2023-04-30T00:00:00+00:00</lastmod>
             </url>
+            <url>
+                <loc>https://utarid.org/single/spring-boot-ta-loglama-yapmak</loc>
+                <lastmod>2023-04-30T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/exceptionHandler-kullanimi</loc>
+                <lastmod>2023-04-30T00:00:00+00:00</lastmod>
+            </url>
         </urlset>
         `);
     });

@@ -172,7 +172,7 @@ function locateCategoryArticles(serverData) {
   						<span class="category_number_span">` + parseInt(i + 1) + `</span>
   					</div>
   					<div class="title">
-  						<h2><a href="/single/` + data.id + `">` + data.article_title + `</a></h2>
+  						<h2><a href="/single/` + data.article_web_title + `">` + data.article_title + `</a></h2>
   					</div>
   					<div class="meta">
   						<time class="published" datetime="` + data.article_date + `">` + getFormattedDateTime(data.article_date) + `</time>

@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
                 <loc>https://utarid.org/single/spring-boot-ta-validation-yapmak</loc>
-                <lastmod>2023-05-08T00:00:00+00:00</lastmod>
+                <lastmod>2023-05-10T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/linux-te-wifi-yapilandirmasi</loc>
@@ -23,19 +23,35 @@ router.get('/', function(req, res, next) {
             </url>
             <url>
                 <loc>https://utarid.org/single/exceptionHandler-kullanimi</loc>
-                <lastmod>2023-05-02T00:00:00+00:00</lastmod>
+                <lastmod>2023-05-01T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/lombok-kullanimi</loc>
-                <lastmod>2023-04-30T00:00:00+00:00</lastmod>
+                <lastmod>2023-04-29T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/primary-ve-qualifier-kullanimi</loc>
-                <lastmod>2023-04-30T00:00:00+00:00</lastmod>
+                <lastmod>2023-04-28T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/linux-te-local-postgresql-kurulumu</loc>
-                <lastmod>2023-04-30T00:00:00+00:00</lastmod>
+                <lastmod>2023-04-28T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/temel-spring-boot-uygulamasi</loc>
+                <lastmod>2023-04-27T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/veri-yapilari:-linked-list</loc>
+                <lastmod>2023-03-13T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/event-driven-programlama</loc>
+                <lastmod>2023-03-05T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/comparator-ve-comparable</loc>
+                <lastmod>2023-02-13T00:00:00+00:00</lastmod>
             </url>
         </urlset>
         `);

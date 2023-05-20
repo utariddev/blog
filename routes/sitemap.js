@@ -39,7 +39,7 @@ router.get('/', function(req, res, next) {
             </url>
             <url>
                 <loc>https://utarid.org/single/temel-spring-boot-uygulamasi</loc>
-                <lastmod>2023-04-27T00:00:00+00:00</lastmod>
+                <lastmod>2023-05-16T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/veri-yapilari:-linked-list</loc>
@@ -52,6 +52,26 @@ router.get('/', function(req, res, next) {
             <url>
                 <loc>https://utarid.org/single/comparator-ve-comparable</loc>
                 <lastmod>2023-02-13T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/veri-yapilari:-map</loc>
+                <lastmod>2023-02-11T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/veri-yapilari:-stack</loc>
+                <lastmod>2023-02-06T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/veri-yapilari:-queue</loc>
+                <lastmod>2023-02-05T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/veri-yapilari:-array</loc>
+                <lastmod>2023-02-04T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/veri-yapilari:-set</loc>
+                <lastmod>2023-02-02T00:00:00+00:00</lastmod>
             </url>
         </urlset>
         `);

@@ -5,7 +5,7 @@
 */
 
 function consoleLog(...args) {
-     console.log(...args);
+    //  console.log(...args);
 }
 
 (function($) {

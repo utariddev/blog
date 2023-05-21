@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var policyRouter = require('./routes/policy');
 var sitemapRouter = require('./routes/sitemap');
+var sitemap2Router = require('./routes/sitemap2');
 // var singleRouter = require('./routes/single');
 
 function redirectWwwTraffic(req, res, next) {
@@ -45,6 +46,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/policy', policyRouter);
 app.use('/sitemap.xml', sitemapRouter);
+app.use('/sitemap', sitemap2Router);
 // app.use('/single', singleRouter);
 
 /*

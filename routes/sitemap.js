@@ -10,6 +10,10 @@ router.get('/', function(req, res, next) {
                 <lastmod>2023-06-08T00:00:00+00:00</lastmod>
             </url>
             <url>
+                <loc>https://utarid.org/single/auto-boxing</loc>
+                <lastmod>2023-06-08T00:00:00+00:00</lastmod>
+            </url>
+            <url>
                 <loc>https://utarid.org/single/java-nio-api</loc>
                 <lastmod>2023-06-08T00:00:00+00:00</lastmod>
             </url>

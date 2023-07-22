@@ -7,7 +7,15 @@ router.get('/', function(req, res, next) {
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
                 <loc>https://utarid.org/sitemap</loc>
-                <lastmod>2023-07-07T00:00:00+00:00</lastmod>
+                <lastmod>2023-07-22T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/spring-boot-gateway</loc>
+                <lastmod>2023-07-22T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/spring-boot-ta-eureka-kullanimi</loc>
+                <lastmod>2023-07-14T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/linuxte-mongodb-kurulumu</loc>

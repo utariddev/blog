@@ -41,6 +41,12 @@ app.use((req, res, next) => {
 })
 
 app.use(redirectWwwTraffic);
+app.get('*', function(req, res, next){ 
+  if (req.headers.host.slice(0, 6) === "lugat."){
+    req.url = '/lugat' + req.url; //append some text yourself
+  }
+  next(); 
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -64,9 +70,12 @@ app.get('/single/:article_id', (req, res, next) => {
   });
 });
 
-/*
-  router kullanilmadigi icin bu sekilde sayfa aciliyor
-*/
+app.get('/lugat/:article_id', (req, res, next) => {
+  res.render('lugat', {
+    article_id: req.params.article_id
+  });
+});
+
 app.get('/category/', (req, res, next) => {
   res.render('category', {});
 });

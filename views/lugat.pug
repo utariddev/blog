@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+//- <!--
+//- 	Future Imperfect by HTML5 UP
+//- 	html5up.net | @ajlkn
+//- 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+//- -->
+<html lang = "tr">
+	<head>
+		<title>#{article_id}lugat</title>
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+		<link rel="stylesheet" href="/stylesheets/highlight.default.min.css">
+		<script src="/javascripts/highlight.min.js"></script>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/stylesheets/main.css" />
+		script(async).
+			let url = window.location.href;
+			let url_array = url.split("/");
+			let article_title = url_array[url_array.length - 1];
+			article_title = article_title.replace(/-/g, " ");
+			document.title = article_title;
+			let meta = document.createElement("meta");
+			meta.setAttribute("name", "description");
+			meta.setAttribute("content", article_title);
+			document.head.appendChild(meta);
+		
+		//-<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-1YB1Z3N9M7"></script>
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-1YB1Z3N9M7');
+
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7474448200829549" crossorigin="anonymous"></script>
+	</head>
+	<body class="single is-preload">
+
+		<div id="wait" class="wait flex_center">
+			<div id="wait_loader"></div>
+			<div id="wait_loader_text" class="white"></div>
+			<div id="wait_loader_time">
+				<div class="values"></div>
+			</div>
+		</div>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">lugat#{article_id}</a></h1>
+						<nav class="links">
+						</nav>
+					</header>
+				<!-- Menu -->
+				<!-- Main -->
+					<div id="main">
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						
+						<p class="copyright">tasarım: <a href="http://html5up.net">HTML5 UP</a>. logo: <a href="https://polarvectors.com">polar vectors</a>.</p>
+					</section>
+			</div>
+		<!-- Scripts -->
+			<script src="/javascripts/jquery.min.js"></script>
+			<script src="/javascripts/browser.min.js"></script>
+			<script src="/javascripts/breakpoints.min.js"></script>
+			<script src="/javascripts/util.js"></script>
+			<script src="/javascripts/main.js"></script>
+			<script src="/javascripts/easytimer.min.js"></script>
+			<script src="/javascripts/single_client.js"></script>
+	</body>
+</html>

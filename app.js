@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var compression = require('compression');
 
+var lugatRouter = require('./routes/lugat');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var policyRouter = require('./routes/policy');
@@ -50,6 +51,7 @@ app.get('*', function(req, res, next){
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/lugat', lugatRouter);
 app.use('/policy', policyRouter);
 app.use('/sitemap.xml', sitemapRouter);
 app.use('/sitemap', sitemap2Router);
@@ -66,12 +68,6 @@ app.get('/single/', (req, res, next) => {
 
 app.get('/single/:article_id', (req, res, next) => {
   res.render('single', {
-    article_id: req.params.article_id
-  });
-});
-
-app.get('/lugat/:article_id', (req, res, next) => {
-  res.render('lugat', {
     article_id: req.params.article_id
   });
 });

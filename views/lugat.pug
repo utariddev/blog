@@ -6,23 +6,13 @@
 //- -->
 <html lang = "tr">
 	<head>
-		<title>#{article_id}lugat</title>
+		<title>#{word_name}</title>
 		<link rel="icon" type="image/png" href="/images/favicon.png">
 		<link rel="stylesheet" href="/stylesheets/highlight.default.min.css">
 		<script src="/javascripts/highlight.min.js"></script>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/stylesheets/main.css" />
-		script(async).
-			let url = window.location.href;
-			let url_array = url.split("/");
-			let article_title = url_array[url_array.length - 1];
-			article_title = article_title.replace(/-/g, " ");
-			document.title = article_title;
-			let meta = document.createElement("meta");
-			meta.setAttribute("name", "description");
-			meta.setAttribute("content", article_title);
-			document.head.appendChild(meta);
 		
 		//-<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-1YB1Z3N9M7"></script>
@@ -49,7 +39,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="/">lugat#{article_id}</a></h1>
+						<h1><a href="/">ana sayfa</a></h1>
 						<nav class="links">
 						</nav>
 					</header>
@@ -71,6 +61,6 @@
 			<script src="/javascripts/util.js"></script>
 			<script src="/javascripts/main.js"></script>
 			<script src="/javascripts/easytimer.min.js"></script>
-			<script src="/javascripts/single_client.js"></script>
+			<script src="/javascripts/single_lugat.js"></script>
 	</body>
 </html>

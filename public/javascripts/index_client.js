@@ -348,16 +348,17 @@ function locateArticles(serverData, currPageNumber) {
   					</div>
   				</header>
   				<!--<a href="single/` + data.id + `" class="image featured">` + data.article_image + `</a>-->
-          <a href="single/` + data.article_web_title + `" class="image featured"><img src="` + data.article_image + `" alt="mysql" border="0"></a>
+          <a href="single/` + data.article_web_title + `" class="image featured">
+            <img src="` + data.article_image + `" alt="mysql" border="0">
+          </a>
           <p>` + data.article_summary + `</p>
   				<footer>
   					<ul class="actions">
-  						<li><a href="single/` + data.id + `" class="button large">devam</a></li>
+  						<li><a href="single/` + data.article_web_title + `" class="button large">devam</a></li>
   					</ul>
   					<ul class="stats">
   						<li><a href="/category/` + data.blog_category_name + `">` + data.blog_category_name + `</a></li>
   						<li><a href="#" class="icon solid fa-book-open">` + data.article_read + `</a></li>
-  						<!--<li><a href="#" class="icon solid fa-comment">128</a></li>-->
   					</ul>
   				</footer>
   			</article>`)

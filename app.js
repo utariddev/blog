@@ -44,7 +44,7 @@ app.use((req, res, next) => {
 app.use(redirectWwwTraffic);
 app.get('*', function(req, res, next){ 
   if (req.headers.host.slice(0, 6) === "lugat."){
-    req.url = '/lugat' + req.url; //append some text yourself
+    req.url = '/lugat' + req.url;
   }
   next(); 
 });

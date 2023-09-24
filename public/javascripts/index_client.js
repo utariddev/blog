@@ -426,13 +426,12 @@ function locateMostReadArticles(serverData) {
     var data = serverData[i];
     ui_elements.div_most_read_articles.append(`<article class="mini-post">
         <header>
-          <h3><a href="single/` + data.id + `">` + data.article_title + `</a></h3>
+          <h3><a href="single/` + data.article_web_title + `">` + data.article_title + `</a></h3>
           <time class="published" datetime="` + data.article_date + `">` + getFormattedDateTime(data.article_date, false) + `</time>
           <a href="#" class="author"><img src="https://i.ibb.co/5K7Myvm/avatar.jpg" alt="avatar" border="0"></a>
         </header>
         <!--<a href="single/` + data.id + `" class="image">` + data.article_image + `</a>-->
-        <a href="single/` + data.id + `" class="image"><img src="` + data.article_image + `" alt="mysql" border="0"></a>
-
+        <a href="single/` + data.article_web_title + `" class="image"><img src="` + data.article_image + `" alt="mysql" border="0"></a>
       </article>`);
   }
 }

@@ -195,7 +195,7 @@ function locateArticle(serverData) {
                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
                     /*
                     var disqus_config = function () {
-                      this.page.url = https://utarid.org/single/`+serverData.id+`;
+                      this.page.url = https://utarid.org/single/`+serverData.article_web_title+`;
                       this.page.identifier = `+serverData.id+`;
                       this.page.title = `+serverData.article_title+`;
                   };

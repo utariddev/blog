@@ -5,7 +5,7 @@ const URL_HOST = process.env.URL_HOST;
 const URL_HOST_LUGAT = process.env.URL_HOST_LUGAT;
 
 //TEST
-// let URL_HOST = "http://localhost:8080/blogserver/rest/message/";
+// const URL_HOST = "http://localhost:8080/blogserver/rest/message/";
 
 const URL_GET_CATEGORIES = "getCategories";
 const URL_GET_ARTICLES = "getArticles";

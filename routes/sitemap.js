@@ -10,6 +10,10 @@ router.get('/', function(req, res, next) {
                 <lastmod>2023-07-22T00:00:00+00:00</lastmod>
             </url>
             <url>
+                <loc>https://utarid.org/single/servlet-listenerlar</loc>
+                <lastmod>2023-09-12T00:00:00+00:00</lastmod>
+            </url>
+            <url>
                 <loc>https://utarid.org/single/spring-boot-gateway</loc>
                 <lastmod>2023-07-22T00:00:00+00:00</lastmod>
             </url>
@@ -156,6 +160,22 @@ router.get('/', function(req, res, next) {
             <url>
                 <loc>https://utarid.org/single/List.of-ve-Arrays.asList</loc>
                 <lastmod>2023-01-27T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/iterator</loc>
+                <lastmod>2023-01-26T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/design-patterns</loc>
+                <lastmod>2023-01-21T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/oop-kavramlari:-inheritance</loc>
+                <lastmod>2023-01-03T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/BigDecimal</loc>
+                <lastmod>2022-12-29T00:00:00+00:00</lastmod>
             </url>
         </urlset>
         `);

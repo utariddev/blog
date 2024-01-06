@@ -138,7 +138,7 @@ function getArticle(article_id) {
       loading_screen.is_get_article_done = true;
 
       if (data.result.code == 1) {
-        locateArticle(data.data[0]);
+        locateArticle(data.data);
         hideLoadingScreen()
       } else {
         hideLoadingAndShowError()

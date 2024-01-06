@@ -234,7 +234,7 @@ function getArticlesCount() {
 function getArticles(currPageNumber) {
   consoleLog("getArticles currPageNumber : " + currPageNumber)
 
-  let indicator = (currPageNumber - 1) * articleCountPerPage;
+  let indicator = currPageNumber - 1;
   consoleLog("getArticles indicator : " + indicator)
 
   $.ajax({

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>ForexWacther account deletion</title>
+  <link rel="stylesheet" href="/stylesheets/remove.css" />
+</head>
+
+<body>
+  <h1>ForexWatcher account deletion</h1>
+  <div id="deleteGSForm">
+    <div class="grid-container">
+      <div class="grid-item"> 
+        <label for="inputGSMail">Mail:</label>
+      </div>
+      <div class="grid-item"> 
+        <input type="text" id="inputGSMail" name="inputGSMail">
+      </div>
+      <div class="grid-item">
+        <label for="inputGSUsername">Username:</label>
+      </div>  
+      <div class="grid-item"> 
+        <input type="text" id="inputGSUsername" name="inputGSUsername">
+      </div> 
+    </div>
+  <button type="button" onclick="removeGSAccount()">Remove Account</button>
+  </div>
+  <br /><br />
+  <div id="deleteForm">
+    <div class="grid-container">
+      <div class="grid-item"> 
+        <label for="inputMail">Mail:</label>
+      </div>
+      <div class="grid-item"> 
+        <input type="text" id="inputMail" name="inputMail">
+      </div>
+      <div class="grid-item">
+        <label for="inputPassword">Password:</label>
+      </div>  
+      <div class="grid-item"> 
+        <input type="text" id="inputPassword" name="inputPassword">
+      </div> 
+    </div>
+    <button type="button" onclick="removeAccount()">Remove Account</button>
+  </div>
+  <br /><br />
+  <div id="deleteForm2">
+    <div class="grid-container">
+      <div class="grid-item"> 
+        <label for="inputUsername2">Username:</label>
+      </div>
+      <div class="grid-item"> 
+        <input type="text" id="inputUsername2" name="inputUsername2">
+      </div>
+      <div class="grid-item">
+        <label for="inputPassword2">Password:</label>
+      </div>  
+      <div class="grid-item"> 
+        <input type="text" id="inputPassword2" name="inputPassword2">
+      </div> 
+    </div>
+    <button type="button" onclick="removeAccount2()">Remove Account</button>
+  </div>
+  
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/browser.min.js"></script>
+<script src="/javascripts/breakpoints.min.js"></script>
+<script src="/javascripts/util.js"></script>
+<script src="/javascripts/main.js"></script>
+<script src="/javascripts/remove_client.js"></script>
+</body>
+</html>

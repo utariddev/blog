@@ -11,6 +11,7 @@ var usersRouter = require('./routes/users');
 var policyRouter = require('./routes/policy');
 var sitemapRouter = require('./routes/sitemap');
 var sitemap2Router = require('./routes/sitemap2');
+const removeRouter = require('./routes/remove');
 // var singleRouter = require('./routes/single');
 
 function redirectWwwTraffic(req, res, next) {
@@ -55,6 +56,7 @@ app.use('/lugat', lugatRouter);
 app.use('/policy', policyRouter);
 app.use('/sitemap.xml', sitemapRouter);
 app.use('/sitemap', sitemap2Router);
+app.use('/remove', removeRouter);
 // app.use('/single', singleRouter);
 
 /*

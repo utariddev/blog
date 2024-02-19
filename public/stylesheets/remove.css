@@ -1,0 +1,22 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 5px;
+}
+
+.grid-item {
+  padding: 5px;
+  text-align: center;
+}
+
+#deleteForm {
+  max-width: 20%;
+}
+
+#deleteGSForm {
+  max-width: 20%;
+}
+
+#deleteForm2 {
+  max-width: 20%;
+}

@@ -54,7 +54,7 @@ var pageCount = 1; //toplam sayfa sayisi
 var currentPageNumber = 1; //acik olan sayfa numarasi
 var timer = new easytimer.Timer();
 
-$(document).ready(function() {
+$(document).ready(function () {
   consoleLog("document ready");
   createClass();
 
@@ -66,7 +66,7 @@ $(document).ready(function() {
   getMostReadArticles();
 });
 
-$(window).on("load", function() {
+$(window).on("load", function () {
   consoleLog("windows load")
 });
 
@@ -124,7 +124,7 @@ function showTimer() {
   timer.start({
     precision: 'secondTenths'
   });
-  timer.addEventListener('secondTenthsUpdated', function(e) {
+  timer.addEventListener('secondTenthsUpdated', function (e) {
     ui_elements.wait_loader_time.html(timer.getTimeValues().toString(['minutes', 'seconds', 'secondTenths']));
   });
 }
@@ -134,11 +134,11 @@ function showTimer() {
   ajax bittikten sonra tekrar duzenleniyor
 */
 function fixIntroSection() {
-  breakpoints.on('<=large', function() {
+  breakpoints.on('<=large', function () {
     ui_elements.intro.prependTo(ui_elements.articles_main);
   });
 
-  breakpoints.on('>large', function() {
+  breakpoints.on('>large', function () {
     ui_elements.intro.prependTo(ui_elements.sidebar);
   });
 }
@@ -177,7 +177,7 @@ function getMostReadArticles() {
       }
       hideLoadingScreen()
     },
-    error: function(XMLHttpRequest, textStatus, errorThrown) {
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
       loading_screen.is_get_most_read_articles_success = false
       loading_screen.is_get_most_read_articles_done = true;
 
@@ -215,7 +215,7 @@ function getArticlesCount() {
       }
       hideLoadingScreen();
     },
-    error: function(XMLHttpRequest, textStatus, errorThrown) {
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
       loading_screen.is_get_articles_count_success = false;
       loading_screen.is_get_articles_count_done = true;
 
@@ -255,7 +255,7 @@ function getArticles(currPageNumber) {
       }
       hideLoadingScreen();
     },
-    error: function(XMLHttpRequest, textStatus, errorThrown) {
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
       loading_screen.is_get_articles_success = false;
       loading_screen.is_get_articles_done = true;
 
@@ -297,7 +297,7 @@ function getCategories() {
       }
       hideLoadingScreen();
     },
-    error: function(XMLHttpRequest, textStatus, errorThrown) {
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
 
       loading_screen.is_get_categories_success = false;
       loading_screen.is_get_categories_done = true;
@@ -336,32 +336,40 @@ function locateArticles(serverData, currPageNumber) {
   //son makaleler ekleniyor
   for (var i = 0; i < serverData.length; i++) {
     var data = serverData[i];
-    ui_elements.articles_main.append(`<article class="post">
-  				<header>
-  					<div class="title">
-  						<h2><a href="/single/` + data.article_web_title + `">` + data.article_title + `</a></h2>
-  						<!--<p>` + data.article_summary + `</p>-->
-  					</div>
-  					<div class="meta">
-  						<time class="published" datetime="` + data.article_date + `">` + getFormattedDateTime(data.article_date, false) + `</time>
-  						<a href="#" class="author"><span class="name">` + data.author_name + `</span><img src="https://i.ibb.co/5K7Myvm/avatar.jpg" alt="avatar" border="0"></a>
-  					</div>
-  				</header>
-  				<!--<a href="single/` + data.id + `" class="image featured">` + data.article_image + `</a>-->
-          <a href="single/` + data.article_web_title + `" class="image featured">
-            <img src="` + data.article_image + `" alt="mysql" border="0">
-          </a>
-          <p>` + data.article_summary + `</p>
-  				<footer>
-  					<ul class="actions">
-  						<li><a href="single/` + data.article_web_title + `" class="button large">devam</a></li>
-  					</ul>
-  					<ul class="stats">
-  						<li><a href="/category/` + data.blog_category_name + `">` + data.blog_category_name + `</a></li>
-  						<li><a href="#" class="icon solid fa-book-open">` + data.article_read + `</a></li>
-  					</ul>
-  				</footer>
-  			</article>`)
+
+    var htmlData = `<article class="post">
+    <header>
+      <div class="title">
+        <h2><a href="/single/` + data.article_web_title + `">` + data.article_title + `</a></h2>
+        <!--<p>` + data.article_summary + `</p>-->
+      </div>
+      <div class="meta">
+        <time class="published" datetime="` + data.article_date + `">` + getFormattedDateTime(data.article_date, false) + `</time>`;
+
+    if (getFormattedDateTime(data.article_date, false) != getFormattedDateTime(data.article_update_date, false)) {
+      htmlData = htmlData + `<time class="updated" datetime="` + data.article_update_date + `">` + getFormattedDateTime(data.article_update_date) + `</time>`;
+    }
+
+    htmlData = htmlData + `<a href="#" class="author"><span class="name">` + data.author_name + `</span><img src="https://i.ibb.co/5K7Myvm/avatar.jpg" alt="avatar" border="0"></a>
+        </div>
+      </header>
+      <!--<a href="single/` + data.id + `" class="image featured">` + data.article_image + `</a>-->
+      <a href="single/` + data.article_web_title + `" class="image featured">
+        <img src="` + data.article_image + `" alt="mysql" border="0">
+      </a>
+      <p>` + data.article_summary + `</p>
+      <footer>
+        <ul class="actions">
+          <li><a href="single/` + data.article_web_title + `" class="button large">devam</a></li>
+        </ul>
+        <ul class="stats">
+          <li><a href="/category/` + data.blog_category_name + `">` + data.blog_category_name + `</a></li>
+          <li><a href="#" class="icon solid fa-book-open">` + data.article_read + `</a></li>
+        </ul>
+      </footer>
+    </article>`
+
+    ui_elements.articles_main.append(htmlData);
   }
 
   //sonraki sayfa acildiktan sonra sayfa basina scroll edilsin

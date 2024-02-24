@@ -62,13 +62,13 @@ function hideLoadingScreen() {
   timer.stop();
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
   consoleLog("document ready");
 
   documentReady();
 });
 
-$(window).on("load", function() {
+$(window).on("load", function () {
   consoleLog("windows load")
 });
 
@@ -117,7 +117,7 @@ function showTimer() {
   timer.start({
     precision: 'secondTenths'
   });
-  timer.addEventListener('secondTenthsUpdated', function(e) {
+  timer.addEventListener('secondTenthsUpdated', function (e) {
     ui_elements.wait_loader_time.html(timer.getTimeValues().toString(['minutes', 'seconds', 'secondTenths']));
   });
 }
@@ -147,7 +147,7 @@ function getCategoryArticles(category_name) {
         // hideLoadingAndShowError()
       }
     },
-    error: function(XMLHttpRequest, textStatus, errorThrown) {
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
       loading_screen.is_get_category_articles_success = false;
       loading_screen.is_get_category_articles_done = true;
 
@@ -166,23 +166,31 @@ function getCategoryArticles(category_name) {
 function locateCategoryArticles(serverData) {
   for (var i = 0; i < serverData.length; i++) {
     var data = serverData[i];
-    ui_elements.category_main.append(`<article class="post">
-  				<header>
-  					<div class="category_number_div">
-  						<span class="category_number_span">` + parseInt(i + 1) + `</span>
-  					</div>
-  					<div class="title">
-  						<h2><a href="/single/` + data.article_web_title + `">` + data.article_title + `</a></h2>
-  					</div>
-  					<div class="meta">
-  						<time class="published" datetime="` + data.article_date + `">` + getFormattedDateTime(data.article_date) + `</time>
-  						<a href="#" class="author">
-                <span class="name">` + data.author_name + `</span>
-                <img src="https://i.ibb.co/5K7Myvm/avatar.jpg" alt="avatar" border="0">
-              </a>
-  					</div>
-  				</header>
-  			</article>
-    `)
+
+    var htmlData = `<article class="post">
+    <header>
+      <div class="category_number_div">
+        <span class="category_number_span">` + parseInt(i + 1) + `</span>
+      </div>
+      <div class="title">
+        <h2><a href="/single/` + data.article_web_title + `">` + data.article_title + `</a></h2>
+      </div>
+      <div class="meta">
+        <time class="published" datetime="` + data.article_date + `">` + getFormattedDateTime(data.article_date) + `</time>`;
+
+    if (getFormattedDateTime(data.article_date, false) != getFormattedDateTime(data.article_update_date, false)) {
+      htmlData = htmlData + `<time class="updated" datetime="` + data.article_update_date + `">` + getFormattedDateTime(data.article_update_date) + `</time>`;
+    }
+
+    htmlData = htmlData + `<a href="#" class="author">
+            <span class="name">` + data.author_name + `</span>
+            <img src="https://i.ibb.co/5K7Myvm/avatar.jpg" alt="avatar" border="0">
+          </a>
+        </div>
+      </header>
+    </article>
+    `;
+
+    ui_elements.category_main.append(htmlData);
   }
 }

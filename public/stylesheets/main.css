@@ -2762,6 +2762,19 @@ ul.posts article header> :last-child {
   white-space: nowrap;
 }
 
+.post>header .meta .updated {
+  color: #3c3b3b;
+  display: block;
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-size: 0.55em;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  margin-top: 0.3em;
+  text-transform: lowercase;
+  white-space: nowrap;
+  font-style: italic;
+}
+
 .post>a.image.featured {
   overflow: hidden;
 }

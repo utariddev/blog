@@ -27,13 +27,13 @@ var ui_elements = null;
 var loading_screen = null;
 var timer = new easytimer.Timer();
 
-$(document).ready(function() {
+$(document).ready(function () {
   consoleLog("document ready");
 
   documentReady();
 });
 
-$(window).on("load", function() {
+$(window).on("load", function () {
   consoleLog("windows load")
 });
 
@@ -81,7 +81,7 @@ function showTimer() {
   timer.start({
     precision: 'secondTenths'
   });
-  timer.addEventListener('secondTenthsUpdated', function(e) {
+  timer.addEventListener('secondTenthsUpdated', function (e) {
     ui_elements.wait_loader_time.html(timer.getTimeValues().toString(['minutes', 'seconds', 'secondTenths']));
   });
 }
@@ -144,7 +144,7 @@ function getArticle(article_id) {
         hideLoadingAndShowError()
       }
     },
-    error: function(XMLHttpRequest, textStatus, errorThrown) {
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
       loading_screen.is_get_article_success = false;
       loading_screen.is_get_article_done = true;
 
@@ -162,15 +162,21 @@ function getArticle(article_id) {
 */
 function locateArticle(serverData) {
   document.title = serverData.article_title;
-  ui_elements.article_main.append(`<article class="post">
-                  <header>
-                    <div class="title">
-                      <h2><a href="#">` + serverData.article_title + `</a></h2>
-                      <!--<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>-->
-                    </div>
-                    <div class="meta">
-                      <time class="published" datetime="` + serverData.article_date + `">` + getFormattedDateTime(serverData.article_date) + `</time>
-                        <a href="#" class="author">
+
+  var htmlData = `<article class="post">
+  <header>
+    <div class="title">
+      <h2><a href="#">` + serverData.article_title + `</a></h2>
+      <!--<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>-->
+    </div>
+    <div class="meta">
+      <time class="published" datetime="` + serverData.article_date + `">` + getFormattedDateTime(serverData.article_date) + `</time>`;
+
+  if (getFormattedDateTime(serverData.article_date, false) != getFormattedDateTime(serverData.article_update_date, false)) {
+    htmlData = htmlData + `<time class="updated" datetime="` + serverData.article_update_date + `">` + getFormattedDateTime(serverData.article_update_date) + `</time>`;
+  }
+
+  htmlData = htmlData + `<a href="#" class="author">
                           <span class="name">` + serverData.author_name + `</span>
                           <img src="https://i.ibb.co/5K7Myvm/avatar.jpg" alt="avatar" border="0">
                         </a>
@@ -195,9 +201,9 @@ function locateArticle(serverData) {
                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
                     /*
                     var disqus_config = function () {
-                      this.page.url = https://utarid.org/single/`+serverData.article_web_title+`;
-                      this.page.identifier = `+serverData.id+`;
-                      this.page.title = `+serverData.article_title+`;
+                      this.page.url = https://utarid.org/single/`+ serverData.article_web_title + `;
+                      this.page.identifier = `+ serverData.id + `;
+                      this.page.title = `+ serverData.article_title + `;
                   };
                     var disqus_config = function () {
                     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
@@ -212,6 +218,8 @@ function locateArticle(serverData) {
                     })();
                 </script>
                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    `)
-    hljs.highlightAll();
+    `;
+  ui_elements.article_main.append(htmlData);
+
+  hljs.highlightAll();
 }

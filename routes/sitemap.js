@@ -7,7 +7,23 @@ router.get('/', function(req, res, next) {
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
                 <loc>https://utarid.org/sitemap</loc>
-                <lastmod>2023-07-22T00:00:00+00:00</lastmod>
+                <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/future</loc>
+                <lastmod>2023-12-04T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/completablefuture</loc>
+                <lastmod>2023-12-04T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/postgresql-veritabaninda-coalesce-kullanimi</loc>
+                <lastmod>2023-11-29T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/encode()-ve-decode()</loc>
+                <lastmod>2023-11-27T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/servlet-listenerlar</loc>

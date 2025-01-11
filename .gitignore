@@ -2,3 +2,5 @@
 /.git_/*
 *orig*
 package-lock.json
+.vscode/*
+.DS_Store

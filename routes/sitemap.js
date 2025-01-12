@@ -7,7 +7,19 @@ router.get('/', function(req, res, next) {
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
                 <loc>https://utarid.org/sitemap</loc>
+                <lastmod>2025-01-12T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/singleton-nesnelerde-readResolve-kullanimi</loc>
+                <lastmod>2025-01-12T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/enum-sabiti-singleton-midir</loc>
                 <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/double-checked-locking</loc>
+                <lastmod>2025-01-06T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/future</loc>

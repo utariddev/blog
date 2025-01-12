@@ -10,6 +10,10 @@ router.get('/', function(req, res, next) {
                 <lastmod>2025-01-12T00:00:00+00:00</lastmod>
             </url>
             <url>
+                <loc>https://utarid.org/single/java-reflection</loc>
+                <lastmod>2025-01-12T00:00:00+00:00</lastmod>
+            </url>
+            <url>
                 <loc>https://utarid.org/single/singleton-nesnelerde-readResolve-kullanimi</loc>
                 <lastmod>2025-01-12T00:00:00+00:00</lastmod>
             </url>

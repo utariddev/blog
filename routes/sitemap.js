@@ -7,7 +7,15 @@ router.get('/', function(req, res, next) {
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
                 <loc>https://utarid.org/sitemap</loc>
-                <lastmod>2025-01-12T00:00:00+00:00</lastmod>
+                <lastmod>2025-01-22T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/cors</loc>
+                <lastmod>2025-01-22T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/bill-pugh-singleton-design</loc>
+                <lastmod>2025-01-18T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/java-reflection</loc>

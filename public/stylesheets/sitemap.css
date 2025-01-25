@@ -1,0 +1,33 @@
+.two-columns {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.two-columns > div {
+    flex: 1 1 50%; /* Default to two columns */
+    box-sizing: border-box;
+    padding: 10px; /* Optional for spacing */
+}
+
+.two-columns {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.two-columns > div {
+    flex: 1 1 50%; /* Default to two columns */
+    box-sizing: border-box;
+    padding: 10px; /* Optional for spacing */
+}
+
+.two-columns span {
+    display: block; /* Ensure spans are displayed as block elements */
+    margin-bottom: 5px; /* Optional: Add some spacing between spans */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .two-columns > div {
+        flex: 1 1 100%; /* Stack columns on smaller screens */
+    }
+}

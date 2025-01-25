@@ -7,7 +7,11 @@ router.get('/', function(req, res, next) {
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
                 <loc>https://utarid.org/sitemap</loc>
-                <lastmod>2025-01-22T00:00:00+00:00</lastmod>
+                <lastmod>2025-01-25T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/questdb</loc>
+                <lastmod>2025-01-25T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/cors</loc>
@@ -32,6 +36,10 @@ router.get('/', function(req, res, next) {
             <url>
                 <loc>https://utarid.org/single/double-checked-locking</loc>
                 <lastmod>2025-01-06T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/method-interceptor</loc>
+                <lastmod>2024-12-28T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/future</loc>

@@ -7,7 +7,11 @@ router.get('/', function(req, res, next) {
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
                 <loc>https://utarid.org/sitemap</loc>
-                <lastmod>2025-01-25T00:00:00+00:00</lastmod>
+                <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/spring-boot-actuator</loc>
+                <lastmod>2025-02-15T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/questdb</loc>
@@ -40,6 +44,22 @@ router.get('/', function(req, res, next) {
             <url>
                 <loc>https://utarid.org/single/method-interceptor</loc>
                 <lastmod>2024-12-28T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/aot-ve-jit-kavramlari</loc>
+                <lastmod>2024-10-12T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/thread</loc>
+                <lastmod>2023-12-04T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/executor</loc>
+                <lastmod>2023-12-04T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/executorservice</loc>
+                <lastmod>2023-12-04T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/future</loc>

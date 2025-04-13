@@ -7,7 +7,11 @@ router.get('/', function(req, res, next) {
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
                 <loc>https://utarid.org/sitemap</loc>
-                <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+                <lastmod>2025-04-06T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/bom</loc>
+                <lastmod>2025-04-06T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/spring-boot-actuator</loc>
@@ -46,8 +50,20 @@ router.get('/', function(req, res, next) {
                 <lastmod>2024-12-28T00:00:00+00:00</lastmod>
             </url>
             <url>
+                <loc>https://utarid.org/single/dependency-injection</loc>
+                <lastmod>2024-12-14T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/checked-exception-ve-unchecked-exception</loc>
+                <lastmod>2024-12-09T00:00:00+00:00</lastmod>
+            </url>
+            <url>
                 <loc>https://utarid.org/single/aot-ve-jit-kavramlari</loc>
                 <lastmod>2024-10-12T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/linuxte-postgresql-kurulumu</loc>
+                <lastmod>2024-02-22T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/thread</loc>
@@ -154,6 +170,10 @@ router.get('/', function(req, res, next) {
                 <lastmod>2023-05-21T00:00:00+00:00</lastmod>
             </url>
             <url>
+                <loc>https://utarid.org/single/temel-spring-boot-uygulamasi</loc>
+                <lastmod>2023-05-17T00:00:00+00:00</lastmod>
+            </url>
+            <url>
                 <loc>https://utarid.org/single/spring-boot-ta-validation-yapmak</loc>
                 <lastmod>2023-05-10T00:00:00+00:00</lastmod>
             </url>
@@ -180,14 +200,6 @@ router.get('/', function(req, res, next) {
             <url>
                 <loc>https://utarid.org/single/primary-ve-qualifier-kullanimi</loc>
                 <lastmod>2023-04-28T00:00:00+00:00</lastmod>
-            </url>
-            <url>
-                <loc>https://utarid.org/single/linux-te-local-postgresql-kurulumu</loc>
-                <lastmod>2023-04-28T00:00:00+00:00</lastmod>
-            </url>
-            <url>
-                <loc>https://utarid.org/single/temel-spring-boot-uygulamasi</loc>
-                <lastmod>2023-05-16T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/veri-yapilari:-linked-list</loc>
@@ -244,6 +256,10 @@ router.get('/', function(req, res, next) {
             <url>
                 <loc>https://utarid.org/single/BigDecimal</loc>
                 <lastmod>2022-12-29T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/optional</loc>
+                <lastmod>2022-12-10T00:00:00+00:00</lastmod>
             </url>
         </urlset>
         `);

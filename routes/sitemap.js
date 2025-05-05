@@ -7,7 +7,11 @@ router.get('/', function(req, res, next) {
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
                 <loc>https://utarid.org/sitemap</loc>
-                <lastmod>2025-04-06T00:00:00+00:00</lastmod>
+                <lastmod>2025-05-05T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/spring-boot-ta-openfeign-kullanimi</loc>
+                <lastmod>2025-05-05T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/bom</loc>
@@ -103,7 +107,7 @@ router.get('/', function(req, res, next) {
             </url>
             <url>
                 <loc>https://utarid.org/single/spring-boot-ta-eureka-kullanimi</loc>
-                <lastmod>2023-07-14T00:00:00+00:00</lastmod>
+                <lastmod>2025-04-13T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/linuxte-mongodb-kurulumu</loc>
@@ -260,6 +264,28 @@ router.get('/', function(req, res, next) {
             <url>
                 <loc>https://utarid.org/single/optional</loc>
                 <lastmod>2022-12-10T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/base64-encoding</loc>
+                <lastmod>2022-12-06T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/generic-tipler</loc>
+                <lastmod>2022-11-26T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/lambda-kullanimi</loc>
+                <lastmod>2022-11-25T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/stream-api</loc>
+                <lastmod>2022-11-23T00:00:00+00:00</lastmod>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/content-provider-kullanimi</loc>
+                <lastmod>2022-07-26</lastmod>
+                <changefreq>yearly</changefreq>
+                <priority>1.0</priority>
             </url>
         </urlset>
         `);

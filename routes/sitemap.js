@@ -7,7 +7,13 @@ router.get('/', function(req, res, next) {
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
                 <loc>https://utarid.org/sitemap</loc>
-                <lastmod>2025-05-05T00:00:00+00:00</lastmod>
+                <lastmod>2025-05-22T00:00:00+00:00</lastmod>
+                <changefreq>yearly</changefreq>
+                <priority>1.0</priority>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/spring-boot-ta-zipkin-kullanimi</loc>
+                <lastmod>2025-05-22T00:00:00+00:00</lastmod>
             </url>
             <url>
                 <loc>https://utarid.org/single/spring-boot-ta-openfeign-kullanimi</loc>
@@ -283,7 +289,13 @@ router.get('/', function(req, res, next) {
             </url>
             <url>
                 <loc>https://utarid.org/single/content-provider-kullanimi</loc>
-                <lastmod>2022-07-26</lastmod>
+                <lastmod>2021-07-26</lastmod>
+                <changefreq>yearly</changefreq>
+                <priority>1.0</priority>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/runtime-izinlerin-alinmasi</loc>
+                <lastmod>2021-07-25</lastmod>
                 <changefreq>yearly</changefreq>
                 <priority>1.0</priority>
             </url>

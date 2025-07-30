@@ -7,7 +7,13 @@ router.get('/', function(req, res, next) {
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
                 <loc>https://utarid.org/sitemap</loc>
-                <lastmod>2025-07-16T00:00:00+00:00</lastmod>
+                <lastmod>2025-07-30T00:00:00+00:00</lastmod>
+                <changefreq>yearly</changefreq>
+                <priority>1.0</priority>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/spring-boot-ile-resilience4j-kullanimi</loc>
+                <lastmod>2025-07-30T00:00:00+00:00</lastmod>
                 <changefreq>yearly</changefreq>
                 <priority>1.0</priority>
             </url>

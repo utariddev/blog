@@ -7,7 +7,13 @@ router.get('/', function(req, res, next) {
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
                 <loc>https://utarid.org/sitemap</loc>
-                <lastmod>2025-08-15T00:00:00+00:00</lastmod>
+                <lastmod>2025-09-07T00:00:00+00:00</lastmod>
+                <changefreq>yearly</changefreq>
+                <priority>1.0</priority>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/spring-security:-temeller</loc>
+                <lastmod>2025-09-07T00:00:00+00:00</lastmod>
                 <changefreq>yearly</changefreq>
                 <priority>1.0</priority>
             </url>
@@ -262,22 +268,32 @@ router.get('/', function(req, res, next) {
             <url>
                 <loc>https://utarid.org/single/veri-yapilari:-array</loc>
                 <lastmod>2023-02-04T00:00:00+00:00</lastmod>
+                <changefreq>yearly</changefreq>
+                <priority>1.0</priority>
             </url>
             <url>
                 <loc>https://utarid.org/single/veri-yapilari:-set</loc>
                 <lastmod>2023-02-02T00:00:00+00:00</lastmod>
+                <changefreq>yearly</changefreq>
+                <priority>1.0</priority>
             </url>
             <url>
                 <loc>https://utarid.org/single/try-with-resources</loc>
                 <lastmod>2023-01-27T00:00:00+00:00</lastmod>
+                <changefreq>yearly</changefreq>
+                <priority>1.0</priority>
             </url>
             <url>
                 <loc>https://utarid.org/single/List.of-ve-Arrays.asList</loc>
                 <lastmod>2023-01-27T00:00:00+00:00</lastmod>
+                <changefreq>yearly</changefreq>
+                <priority>1.0</priority>
             </url>
             <url>
                 <loc>https://utarid.org/single/iterator</loc>
                 <lastmod>2023-01-26T00:00:00+00:00</lastmod>
+                <changefreq>yearly</changefreq>
+                <priority>1.0</priority>
             </url>
             <url>
                 <loc>https://utarid.org/single/design-patterns</loc>
@@ -354,6 +370,24 @@ router.get('/', function(req, res, next) {
             <url>
                 <loc>https://utarid.org/single/activity-lifecycle-metodlari</loc>
                 <lastmod>2021-07-13</lastmod>
+                <changefreq>yearly</changefreq>
+                <priority>1.0</priority>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/uygulamalar-arasi-veri-paylasimi-yapmak</loc>
+                <lastmod>2021-07-10</lastmod>
+                <changefreq>yearly</changefreq>
+                <priority>1.0</priority>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/flutter-android-uygulamasinda-fcm-kullanimi</loc>
+                <lastmod>2021-05-02</lastmod>
+                <changefreq>yearly</changefreq>
+                <priority>1.0</priority>
+            </url>
+            <url>
+                <loc>https://utarid.org/single/future-builder-kullanimi</loc>
+                <lastmod>2021-04-24</lastmod>
                 <changefreq>yearly</changefreq>
                 <priority>1.0</priority>
             </url>

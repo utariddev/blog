@@ -58,12 +58,7 @@ $(document).ready(function () {
   consoleLog("document ready");
   createClass();
 
-  showLoadingScreen();
-
   getArticlesCount();
-  getCategories();
-  getArticles(currentPageNumber);
-  getMostReadArticles();
 });
 
 $(window).on("load", function () {
@@ -354,13 +349,13 @@ function locateArticles(serverData, currPageNumber) {
         </div>
       </header>
       <!--<a href="single/` + data.id + `" class="image featured">` + data.article_image + `</a>-->
-      <a href="single/` + data.article_web_title + `" class="image featured">
+      <a href="/single/` + data.article_web_title + `" class="image featured">
         <img src="` + data.article_image + `" alt="mysql" border="0">
       </a>
       <p>` + data.article_summary + `</p>
       <footer>
         <ul class="actions">
-          <li><a href="single/` + data.article_web_title + `" class="button large">devam</a></li>
+          <li><a href="/single/` + data.article_web_title + `" class="button large">devam</a></li>
         </ul>
         <ul class="stats">
           <li><a href="/category/` + data.blog_category_name + `">` + data.blog_category_name + `</a></li>
@@ -389,16 +384,22 @@ function locatePreviousNextPage(currPageNumber) {
 
   let paginationText = `<ul class="actions pagination">`;
   if (currPageNumber == 1) {
-    paginationText += `<li id="previous_button"><a href="" class="pagination disabled button large previous">Önceki Sayfa</a></li>`;
+    paginationText += `<li><a href="" class="pagination disabled button large previous">Önceki Sayfa</a></li>`;
   } else {
     // paginationText += `<li id="previous_button"><a onClick="nextPageClicked(` + parseInt(indicator - 3) + `)" class="pagination button large previous">Önceki Sayfa</a></li>`;
-    paginationText += `<li id="previous_button"><a onClick="nextPageClicked(` + parseInt(currPageNumber - 1) + `)" class="pagination button large previous">Önceki Sayfa</a></li>`;
+    paginationText += `<li><a onClick="nextPageClicked(` + parseInt(currPageNumber - 1) + `)" class="pagination button large previous">Önceki Sayfa</a></li>`;
   }
+
+  for (var i = 1; i <= pageCount; i++) {
+    var activeClass = i == currPageNumber ? 'on_page' : '';
+    paginationText += `<li><a class="pagination button large previous ` + activeClass + `" id="page_` + i + `" onClick="nextPageClicked(` + i + `)">` + i + `</a></li>`;
+  }
+
   if (pageCount <= 1 || currPageNumber == pageCount) {
-    paginationText += `<li id="next_button"><a href="" class="disabled pagination button large next">Sonraki Sayfa</a></li>`
+    paginationText += `<li><a href="" class="disabled pagination button large next">Sonraki Sayfa</a></li>`
   } else {
     // paginationText += `<li id="next_button"><a onClick="nextPageClicked(` + parseInt(indicator + 3) + `)" class="pagination button large next">Sonraki Sayfa</a></li>`
-    paginationText += `<li id="next_button"><a onClick="nextPageClicked(` + parseInt(currPageNumber + 1) + `)" class="pagination button large next">Sonraki Sayfa</a></li>`
+    paginationText += `<li><a onClick="nextPageClicked(` + parseInt(currPageNumber + 1) + `)" class="pagination button large next">Sonraki Sayfa</a></li>`
   }
   paginationText += `</ul>`;
   ui_elements.articles_main.append(paginationText)

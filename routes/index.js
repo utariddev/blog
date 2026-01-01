@@ -5,11 +5,69 @@ var axios = require('axios');
 const crypto = require('crypto');
 const argon2 = require('argon2');
 var constant = require('../constant');
+debug.enabled = false;
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', {});
+  Promise.all([
+    fetchArticles(0),
+    fetchCategories(),
+    fetchMostReadArticles(),
+    fetchArticlesCount()
+  ]).then(([articlesData, categoriesData, mostReadData, articlesCountData]) => {
+    res.render('index', {
+      articles: articlesData.result.code == 1 ? articlesData.data : [],
+      categories: categoriesData.result.code == 1 ? categoriesData.data : [],
+      mostRead: mostReadData.result.code == 1 ? mostReadData.data : [],
+      articleCount: articlesCountData.result.code == 1 ? articlesCountData.data.count : 0,
+      pageCount: articlesCountData.result.code == 1 ? Math.ceil(articlesCountData.data.count / 3) : 1,
+      formatDate: getFormattedDateTime
+    });
+  }).catch(error => {
+    debug("SSR Error: " + error);
+    res.render('index', { error: error });
+  });
 });
+
+function getFormattedDateTime(datetime) {
+  const months = ["ocak", "şubat", "mart", "nisan", "mayıs", "haziran", "temmuz", "ağustos", "eylül", "ekim", "kasım", "aralık"]; // tr
+  let current_datetime = new Date(datetime);
+  return months[current_datetime.getMonth()] + " " + current_datetime.getDate() + ", " + current_datetime.getFullYear();
+}
+
+function fetchArticles(indicator) {
+  const reqAddress = constant.URL_HOST + constant.URL_GET_ARTICLES;
+  const reqBody = { "indicator": indicator.toString() };
+  return axios.post(reqAddress, reqBody).then(r => {
+    debug("fetched articles: ", JSON.stringify(r.data).substring(0, 100)); // Log first 100 chars
+    return r.data;
+  });
+}
+
+function fetchCategories() {
+  const reqAddress = constant.URL_HOST + constant.URL_GET_CATEGORIES;
+  const reqBody = {};
+  return axios.post(reqAddress, reqBody).then(r => {
+    debug("fetched categories: ", JSON.stringify(r.data).substring(0, 100));
+    return r.data;
+  });
+}
+
+function fetchMostReadArticles() {
+  const reqAddress = constant.URL_HOST + constant.URL_GET_MOST_READ_ARTICLE;
+  const reqBody = {};
+  return axios.post(reqAddress, reqBody).then(r => {
+    debug("fetched most read: ", JSON.stringify(r.data).substring(0, 100));
+    return r.data;
+  });
+}
+
+
+function fetchArticlesCount() {
+  const reqAddress = constant.URL_HOST + constant.URL_GET_ARTICLES_COUNT;
+  const reqBody = {};
+  return axios.post(reqAddress, reqBody).then(r => r.data);
+}
 
 router.get("/getArticle/:article_id", (req, res, next) => {
   getArticle(res, req, next)

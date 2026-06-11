@@ -1,3 +1,4 @@
 {
-  "apiBaseUrl": "/rest"
+  "apiBaseUrl": "/rest",
+  "lugatApiBaseUrl": "/lugatapi"
 }

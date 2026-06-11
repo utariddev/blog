@@ -4,6 +4,7 @@ import { Observable, of, catchError, map } from 'rxjs';
 
 export interface AppConfig {
   apiBaseUrl: string;
+  lugatApiBaseUrl: string;
 }
 
 @Injectable({
@@ -25,7 +26,7 @@ export class ConfigService {
         return config;
       }),
       catchError(() => {
-        const fallback: AppConfig = { apiBaseUrl: '/rest' };
+        const fallback: AppConfig = { apiBaseUrl: '/rest', lugatApiBaseUrl: '/lugatapi' };
         this.config = fallback;
         return of(fallback);
       })
@@ -34,5 +35,9 @@ export class ConfigService {
 
   get apiBaseUrl(): string {
     return this.config?.apiBaseUrl || '/rest';
+  }
+
+  get lugatApiBaseUrl(): string {
+    return this.config?.lugatApiBaseUrl || '/lugatapi';
   }
 }

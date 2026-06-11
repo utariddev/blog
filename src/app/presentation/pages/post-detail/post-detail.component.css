@@ -1,0 +1,195 @@
+.detail-layout {
+  max-width: 1200px; /* Expanded max-width further for an optimal spacious layout */
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: var(--color-bg-body);
+  min-height: calc(100vh - 60px);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.post-title {
+  font-size: 2rem;
+  font-weight: 300; /* As seen in the screenshot */
+  color: var(--color-text-primary);
+  letter-spacing: 1px;
+}
+
+.post-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.post-date {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 1px;
+}
+
+.post-updated {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  letter-spacing: 0.5px;
+  text-transform: lowercase;
+  font-style: italic;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-author {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.author-avatar {
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+.post-image-wrapper {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-lg);
+}
+
+.post-detail-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.post-article {
+  background-color: #ffffff; /* White background for the article area */
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
+.post-content {
+  font-size: 1rem; /* Slightly reduced font size for a cleaner and more professional look */
+  line-height: 1.8;
+  color: var(--color-text-primary);
+}
+
+.post-content p {
+  margin-bottom: var(--spacing-md);
+}
+
+/* 
+  Use ::ng-deep to bypass Angular's ViewEncapsulation for dynamically inserted HTML via [innerHTML].
+  This ensures that style rules are applied correctly to <pre> and <code> tags at runtime.
+*/
+::ng-deep .post-content pre {
+  background-color: #f8f9fa !important; /* Elegant light gray background */
+  border: none !important; /* Remove standard borders */
+  border-left: 4px solid #ced4da !important; /* Stylish left border as seen in the screenshot */
+  padding: 16px 20px !important; /* Generous padding for high readability */
+  border-radius: 0 4px 4px 0 !important; /* Rounded corners except on the left bordered side */
+  font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace !important; /* Monospace fonts for code */
+  font-size: 0.9rem !important; /* Compact font size for code blocks */
+  line-height: 1.6 !important;
+  overflow-x: auto !important; /* Enable scroll bar on horizontal overflow */
+  margin-bottom: var(--spacing-md) !important;
+  color: #212529 !important; /* Dark neutral text color for contrast */
+}
+
+::ng-deep .post-content code {
+  background-color: #f1f3f5 !important; /* Matching background for inline code elements */
+  padding: 3px 6px !important;
+  border-radius: 4px !important;
+  font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace !important;
+  font-size: 0.85rem !important;
+  color: #e64980 !important; /* Highlighting color for inline code */
+}
+
+/* 
+  Reset display and padding for <code> elements inside <pre> blocks 
+  to prevent browsers from rendering a leading space character
+*/
+::ng-deep .post-content pre code {
+  display: block !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  color: inherit !important;
+}
+
+.loading-text {
+  text-align: center;
+  font-family: var(--font-family-heading);
+  color: var(--color-text-muted);
+}
+
+/* Category and Read Count Info (Bottom Right) */
+.post-extra-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.extra-category {
+  color: var(--color-text-secondary);
+  text-transform: lowercase;
+  border-bottom: 1px dotted var(--color-text-secondary);
+  transition: color var(--transition-fast), border-color var(--transition-fast), border-bottom-style var(--transition-fast);
+}
+
+.extra-category:hover {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+  border-bottom-style: solid;
+}
+
+.extra-separator {
+  color: var(--color-border);
+  font-weight: 300;
+}
+
+.extra-read-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.book-icon {
+  stroke: var(--color-text-secondary);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.extra-read {
+  color: var(--color-text-secondary);
+  text-transform: lowercase;
+}

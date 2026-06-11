@@ -1,0 +1,83 @@
+.category-layout {
+  max-width: 900px; /* Görseldeki gibi kartların biraz daha geniş olabilmesi için ayarlandı */
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+  min-height: calc(100vh - 60px);
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-text-muted);
+  font-family: var(--font-family-base);
+  font-style: italic;
+  background-color: var(--color-bg-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: 4px;
+}
+
+/* Skeleton Loader Animation & Styles */
+@keyframes skeleton-glow {
+  0% {
+    background-color: #f3f3f3;
+  }
+  50% {
+    background-color: #e6e6e6;
+  }
+  100% {
+    background-color: #f3f3f3;
+  }
+}
+
+.skeleton-card {
+  display: flex;
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  padding: var(--spacing-md);
+  gap: var(--spacing-md);
+  min-height: 90px;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.skeleton-left {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.skeleton-index {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #ccc;
+}
+
+.skeleton-center {
+  flex-grow: 1;
+}
+
+.skeleton-title-bar {
+  height: 20px;
+  width: 70%;
+  border-radius: 4px;
+  animation: skeleton-glow 1.5s infinite ease-in-out;
+}
+
+.skeleton-right {
+  width: 180px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.skeleton-meta-bar {
+  height: 16px;
+  width: 120px;
+  border-radius: 4px;
+  animation: skeleton-glow 1.5s infinite ease-in-out;
+}

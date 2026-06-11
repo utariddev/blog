@@ -1,0 +1,7 @@
+{
+  "/rest": {
+    "target": "https://api.utarid.org",
+    "secure": true,
+    "changeOrigin": true
+  }
+}

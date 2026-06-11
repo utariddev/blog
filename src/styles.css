@@ -1,1 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
+/* Google Fonts - Raleway */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette (Design Tokens) */
+  --color-bg-body: #f4f4f4;       /* Light gray background (as in the design) */
+  --color-bg-surface: #ffffff;    /* Pure white for cards and sidebar */
+  
+  --color-text-primary: #333333;  /* Main text color (Dark gray, not pure black for better readability) */
+  --color-text-secondary: #777777;/* For dates and subheadings */
+  --color-text-muted: #a0a0a0;    /* For subtle lines or muted text */
+  
+  --color-accent: #6b4b3a;        /* Accent color (Brown from the logo) */
+  --color-accent-hover: #52392c;  /* Accent color hover (Darker brown) */
+  
+  --color-border: #eaeaea;        /* Thin dividers */
+  
+  /* Typography */
+  --font-family-base: 'Raleway', sans-serif;
+  --font-family-heading: 'Raleway', sans-serif;
+  
+  /* Shadows (For a Premium Feel) */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.08);
+  
+  /* Transitions (Micro-animations) */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  
+  /* Grid and Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 5rem;
+}
+
+/* Base Reset & Styles (CSS Reset) */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-bg-body);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* Smoother fonts on Retina/Mac screens */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px dotted var(--color-text-secondary);
+  transition: color var(--transition-fast), border-color var(--transition-fast), border-bottom-style var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+  border-bottom-style: solid;
+}
+
+ul, ol {
+  list-style: none;
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a3f5a" />
+      <stop offset="40%" stop-color="#fa9c7a" />
+      <stop offset="70%" stop-color="#b85c38" />
+      <stop offset="100%" stop-color="#3b2016" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#bg)" />
+  <circle cx="130" cy="70" r="8" fill="#FFF" opacity="0.8" />
+  <path d="M0 130 Q 50 110 100 130 T 200 130 L 200 200 L 0 200 Z" fill="#6b3519" opacity="0.9" />
+  <path d="M0 150 Q 80 130 200 160 L 200 200 L 0 200 Z" fill="#3b2016" />
+  <text x="50%" y="180" font-family="sans-serif" font-size="28" font-weight="bold" letter-spacing="8" fill="#FFF" text-anchor="middle">UTARID</text>
+</svg>

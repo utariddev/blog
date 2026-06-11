@@ -1,0 +1,268 @@
+.post-card {
+  display: flex;
+  align-items: stretch; /* Allows left number column to stretch full height */
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  padding: 0; /* Cleared padding so the left section stretches completely */
+  margin-bottom: var(--spacing-md);
+  transition: box-shadow var(--transition-normal), transform var(--transition-fast);
+  cursor: pointer;
+  min-height: 180px; /* Styled tall card min-height */
+  text-decoration: none !important; /* Reset browser default link underline */
+  color: inherit !important; /* Reset browser default link color */
+  border-bottom: none !important; /* Remove global dotted border */
+}
+
+/* Hover Effects */
+.post-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card-left {
+  flex: 0 0 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid var(--color-border);
+  padding: var(--spacing-md) 0;
+  align-self: stretch; /* Tam yüksekliği kaplar */
+}
+
+.post-index {
+  font-family: var(--font-family-heading);
+  font-size: 3rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+.card-right-content {
+  flex-grow: 1;
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Üst başlık, çizgi ve resim arasında dengeli dağılım */
+  gap: var(--spacing-sm);
+  width: calc(100% - 80px);
+}
+
+.card-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: var(--spacing-md);
+}
+
+.header-right-meta {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important; /* Çizgiyi en sola, içeriği en sağa yaslar */
+  flex: 0 0 150px !important; /* Toplam sağ blok genişliği tam 150px olarak kilitlendi! */
+  width: 150px !important;
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+}
+
+.meta-separator {
+  width: 1px;
+  height: 28px; /* Dikey sınır çizgisi yüksekliği */
+  background-color: var(--color-border) !important; /* Sol dikey çizginin rengiyle %100 aynı yapıyoruz */
+}
+
+.post-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+  flex-grow: 1 !important; /* Başlık alanı sol boşluğu kaplar ve sağ grubu tamamen sabitler */
+}
+
+.post-meta {
+  display: flex !important;
+  flex-direction: column !important; /* Tarih üstte, yazar altta olacak şekilde dikey akış */
+  align-items: flex-end !important; /* Sağa yaslı */
+  gap: var(--spacing-xs) !important;
+  flex-grow: 1 !important; /* Kalan 150px içindeki tüm alanı kaplar */
+}
+
+.post-date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+.post-updated {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  letter-spacing: 0.5px;
+  text-transform: lowercase;
+  font-style: italic;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-author {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.author-avatar {
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+/* İnce Yatay Çizgi */
+.card-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border) !important; /* Sınır çizgisi rengiyle %100 aynı yapıyoruz */
+  margin: var(--spacing-sm) 0;
+}
+
+.card-bottom-body {
+  display: flex;
+  justify-content: center; /* Resmi yatayda kendi alanında ortalar */
+  align-items: center;
+  width: 100%;
+  position: relative; /* Ekstra bilgileri sabitlemek için relative yapıyoruz */
+  min-height: 100px;
+}
+
+.post-extra-info {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background-color: transparent !important; /* Arka plan tamamen saydam */
+  color: var(--color-text-secondary) !important; /* Yazı rengi ikincil gri ton */
+  padding: 0 !important; /* İç dolgu sıfırlandı */
+  border-radius: 0 !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  box-shadow: none !important; /* Gölge kaldırıldı */
+}
+
+.extra-category {
+  color: var(--color-text-secondary) !important;
+  text-transform: lowercase;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  border-bottom: 1px dotted var(--color-text-secondary) !important;
+  transition: border-color var(--transition-fast), color var(--transition-fast), border-bottom-style var(--transition-fast);
+}
+
+.extra-category:hover {
+  color: var(--color-accent) !important;
+  border-bottom-color: var(--color-accent) !important;
+  border-bottom-style: solid !important;
+}
+
+.extra-separator {
+  color: var(--color-border) !important; /* Dikey çizgi için soluk border rengi */
+  font-weight: 300;
+  margin: 0 4px;
+}
+
+.extra-read-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.book-icon {
+  stroke: var(--color-text-secondary);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.extra-read {
+  color: var(--color-text-secondary) !important;
+  text-transform: lowercase;
+}
+
+.post-image-container {
+  max-width: 500px !important;
+  max-height: 500px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive constraints */
+@media (max-width: 768px) {
+  .post-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    min-height: auto;
+  }
+  
+  .card-left {
+    border: none;
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .card-right-content {
+    width: 100%;
+    padding: 0;
+  }
+
+  .card-top-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+
+  .header-right-meta {
+    flex: auto;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .card-bottom-body {
+    justify-content: center;
+    margin-top: var(--spacing-sm);
+  }
+
+  .meta-separator {
+    display: none; /* Mobilde dikey ayırıcıyı gizliyoruz */
+  }
+
+  .post-title {
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+
+  .post-meta {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Mobilde de dikey olmasını garanti ediyoruz */
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+}

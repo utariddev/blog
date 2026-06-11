@@ -1,0 +1,19 @@
+.main-layout {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto; /* Sayfayı ortalar */
+  min-height: calc(100vh - 60px); /* Navbar yüksekliği çıkarıldı */
+}
+
+.content-area {
+  flex-grow: 1; /* Geri kalan tüm alanı kaplar */
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-body);
+}
+
+/* Mobil cihazlar için responsive (duyarlı) tasarım */
+@media (max-width: 900px) {
+  .main-layout {
+    flex-direction: column;
+  }
+}

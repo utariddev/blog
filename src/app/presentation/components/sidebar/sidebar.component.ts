@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { Observable, catchError, of } from 'rxjs';
 import { Post } from '../../../domain/models/post.model';
 import { PostRepository } from '../../../domain/repositories/post.repository';
@@ -7,7 +8,7 @@ import { PostRepository } from '../../../domain/repositories/post.repository';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
 template: `
     <aside class="sidebar">
       <div class="profile-section">
@@ -23,7 +24,7 @@ template: `
         <h3 class="section-title">çok okunanlar</h3>
         
         <ng-container *ngIf="popularPosts$ | async as posts">
-          <div class="popular-card" *ngFor="let post of posts">
+          <div class="popular-card" *ngFor="let post of posts" [routerLink]="['/post', post.slug]">
              <div>
                 <img *ngIf="post.imageUrl; else noImage" [src]="post.imageUrl" [alt]="post.title" class="card-image">
                 <ng-template #noImage>

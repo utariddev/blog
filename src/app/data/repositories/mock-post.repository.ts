@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Post } from '../../domain/models/post.model';
+import { PostSuggestion } from '../../domain/models/post.model';
+import { SearchPostsRequest } from '../../domain/models/post.model';
+import { SearchPostsResult } from '../../domain/models/post.model';
 import { PostRepository } from '../../domain/repositories/post.repository';
 import { ArticlesCountData } from '../../domain/models/article-count.model';
 
@@ -133,5 +136,38 @@ export class MockPostRepository implements PostRepository {
 
   getArticlesCount(): Observable<ArticlesCountData> {
     return of({ count: this.posts.length.toString() });
+  }
+
+  getSuggestions(query: string, limit = 5): Observable<PostSuggestion[]> {
+    if (!query || query.trim().length < 3) {
+      return of([]);
+    }
+    const q = query.trim().toLowerCase();
+    const suggestions: PostSuggestion[] = this.posts
+      .filter(p => p.title.toLowerCase().includes(q))
+      .slice(0, limit)
+      .map(p => ({
+        id: p.id,
+        title: p.title,
+        web_title: p.slug,
+        category_name: p.categoryName || ''
+      }));
+    return of(suggestions);
+  }
+
+  searchPosts(request: SearchPostsRequest): Observable<SearchPostsResult> {
+    const q = request.query.trim().toLowerCase();
+    if (!q) return of({ posts: [], totalCount: 0 });
+    const filtered = this.posts.filter(p => 
+      p.title.toLowerCase().includes(q) || 
+      p.excerpt.toLowerCase().includes(q) ||
+      p.tags.some(t => t.toLowerCase().includes(q))
+    );
+    const start = request.indicator || 0;
+    const end = start + (request.page_size || 10);
+    return of({
+      posts: filtered.slice(start, end),
+      totalCount: filtered.length
+    });
   }
 }

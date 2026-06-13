@@ -16,3 +16,30 @@ export interface Post {
   readCount?: string;
   categoryName?: string;
 }
+
+export interface PostSuggestion {
+  id: string;
+  title: string;
+  web_title: string;
+  category_name: string;
+}
+
+export interface SearchPostsRequest {
+  query: string;
+  indicator: number;
+  page_size: number;
+}
+
+export interface SearchPostsResponse {
+  result: {
+    code: string;
+    message: string;
+  };
+  data: unknown[];
+  total_count?: number;
+}
+
+export interface SearchPostsResult {
+  posts: Post[];
+  totalCount: number;
+}

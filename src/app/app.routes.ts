@@ -3,6 +3,8 @@ import { HomeComponent } from './presentation/pages/home/home.component';
 import { PostDetailComponent } from './presentation/pages/post-detail/post-detail.component';
 import { CategoryComponent } from './presentation/pages/category/category.component';
 import { LugatDetailComponent } from './presentation/pages/lugat-detail/lugat-detail.component';
+import { AdminComponent } from './presentation/pages/admin/admin.component';
+import { SearchComponent } from './presentation/pages/search/search.component';
 
 export const routes: Routes = [
   { 
@@ -23,6 +25,16 @@ export const routes: Routes = [
   {
     path: 'lugat/:slug', // Lugat detail page
     component: LugatDetailComponent,
-    title: 'Lugat'
+    title: 'lugat'
+  },
+  {
+    path: 'admin', // Admin preview page
+    component: AdminComponent,
+    title: 'admin'
+  },
+  {
+    path: 'search', // Search results page
+    component: SearchComponent,
+    title: 'Arama'
   }
 ];

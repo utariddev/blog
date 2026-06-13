@@ -1,5 +1,8 @@
 import { Observable } from 'rxjs';
 import { Post } from '../models/post.model';
+import { PostSuggestion } from '../models/post.model';
+import { SearchPostsRequest } from '../models/post.model';
+import { SearchPostsResult } from '../models/post.model';
 import { ArticlesCountData } from '../models/article-count.model';
 
 /**
@@ -14,4 +17,6 @@ export abstract class PostRepository {
   abstract getPopularPosts(): Observable<Post[]>;
   abstract getPostsByCategory(categorySlug: string): Observable<Post[]>;
   abstract getArticlesCount(): Observable<ArticlesCountData>;
+  abstract getSuggestions(query: string, limit?: number): Observable<PostSuggestion[]>;
+  abstract searchPosts(request: SearchPostsRequest): Observable<SearchPostsResult>;
 }

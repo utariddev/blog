@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { Post } from '../../domain/models/post.model';
+import { Post, PostSuggestion, SearchPostsRequest, SearchPostsResult, SearchPostsResponse } from '../../domain/models/post.model';
 import { PostRepository } from '../../domain/repositories/post.repository';
 import { ArticlesCountData } from '../../domain/models/article-count.model';
 import { ApiResponse } from '../../domain/models/api-response.model';
@@ -175,6 +175,49 @@ export class ApiPostRepository implements PostRepository {
             }));
           }
           return [];
+        })
+      ))
+    );
+  }
+
+  getSuggestions(query: string, limit = 5): Observable<PostSuggestion[]> {
+    if (!query || query.trim().length < 3) {
+      return of([]);
+    }
+    return this.getApiBase().pipe(
+      switchMap(apiBase => this.http.get<PostSuggestion[]>(`${apiBase}/message/suggest`, {
+        params: { q: query.trim(), limit: limit.toString() }
+      }).pipe(
+        map(suggestions => suggestions || [])
+      ))
+    );
+  }
+
+  searchPosts(request: SearchPostsRequest): Observable<SearchPostsResult> {
+    return this.getApiBase().pipe(
+      switchMap(apiBase => this.http.post<SearchPostsResponse>(`${apiBase}/message/search`, request).pipe(
+        map(response => {
+          const posts: Post[] = response && response.data
+            ? (response.data as unknown as ArticleDto[]).map(dto => ({
+                id: dto.id,
+                title: dto.article_title,
+                slug: dto.article_web_title,
+                excerpt: dto.article_summary || dto.article_text || '',
+                content: cleanArticleText(dto.article_text),
+                publishedAt: new Date(dto.article_date),
+                updatedAt: dto.article_update_date && !isSameDay(dto.article_update_date, dto.article_date) ? new Date(dto.article_update_date) : undefined,
+                author: dto.author_name,
+                imageUrl: dto.article_image || undefined,
+                tags: dto.blog_category_name ? [dto.blog_category_name.toLowerCase()] : [],
+                commentCount: 0,
+                readCount: dto.article_read || '0',
+                categoryName: dto.blog_category_name || ''
+              }))
+            : [];
+          return {
+            posts,
+            totalCount: response?.total_count ?? posts.length
+          };
         })
       ))
     );
